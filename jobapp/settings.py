@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'app',
     'subscribe',
     'uploadfiles',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,9 @@ MEDIA_URL = 'media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#AWS Storage
+DEFAULT_FILE_STORAGE = "storages.backends.s3.S3Storage"
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_S3_SECRET_ACCESS_KEY = os.getenv('AWS_S3_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
